@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class GameController : MonoBehaviour, ITurnBasedGameController
+public class GameController : MonoBehaviour
 {
     bool gameEnded = false;
     public Player[] players;
@@ -10,7 +10,6 @@ public class GameController : MonoBehaviour, ITurnBasedGameController
     public InterfacePanel interfacePanel;
     public bool endTurn;
     public int turn = 0;
-
 
     private void Awake()
     {
@@ -37,7 +36,6 @@ public class GameController : MonoBehaviour, ITurnBasedGameController
         GameStart();
     }
 
-
     void Update()
     {
         if (gameEnded)
@@ -51,7 +49,6 @@ public class GameController : MonoBehaviour, ITurnBasedGameController
         }
     }
 
-
     public string GetPlayerName()
     {
         return players[_activePlayerId].playerName;
@@ -61,7 +58,6 @@ public class GameController : MonoBehaviour, ITurnBasedGameController
     {
         return players[_activePlayerId];
     }
-
     public void NextPlayer()
     {
         CheckVictory();
@@ -78,10 +74,6 @@ public class GameController : MonoBehaviour, ITurnBasedGameController
 
         endTurn = true;
     }
-
-
-
-
 
     public void Turn(Player player)
     {

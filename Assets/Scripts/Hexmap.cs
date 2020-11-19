@@ -6,8 +6,6 @@ public class Hexmap : MonoBehaviour
     public List<HexagonField> hexagons;
     public List<HexagonField> startingHexagons;
 
-
-
     private void Start()
     {
 

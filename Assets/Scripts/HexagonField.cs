@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class HexagonField : Field
+public class HexagonField: MonoBehaviour
 {
     [System.Serializable]
     public class Neighbours
@@ -15,14 +15,11 @@ public class HexagonField : Field
 
     public Neighbours neighbours;
     private HexagonField[] _hexes;
-    public bool Active;
     public Player _player;
     private bool _checked;
 
     private void Awake()
     {
-        gameObject.SetActive(Active);
-
         _hexes = new HexagonField[6];
         if(neighbours.topRight != null)
         {
@@ -101,16 +98,4 @@ public class HexagonField : Field
     {
         _checked = false;
     }
-
-    override
-    public void Activate()
-    {
-
-    }
-
-    public HexagonField() : base()
-    {
-
-    }
-
 }
