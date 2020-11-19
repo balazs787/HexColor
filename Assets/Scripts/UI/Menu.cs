@@ -60,12 +60,6 @@ public class Menu : MonoBehaviour
         PlayerSettings.aiLevel = level;
     }
 
-    public void ChoosePlayerAndStart(int numberOfPlayers)
-    {
-        PlayerSettings.activePlayers = numberOfPlayers;
-        SceneManager.LoadScene("Game");
-    }
-
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);

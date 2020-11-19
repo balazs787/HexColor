@@ -1,23 +1,28 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class ColorButtons : MonoBehaviour
 {
     public Material[] materials;
-    private Button _lastChoice;
+    public Button[] Buttons;
 
     public void Deactive(Button button)
     {
-        foreach (var b in GetComponentsInChildren<Button>())
+        foreach (var b in Buttons)
         {
             b.interactable = true;
         }
-        button.interactable = false;
-        if (_lastChoice != null)
+        for (int i = 0; i < materials.Length; i++)
         {
-            _lastChoice.interactable = false;
+            foreach (var player in FindObjectOfType<GameController>().players)
+            {
+                if (player.color == materials[i].color)
+                {
+                    Buttons[i].interactable = false;
+                }
+            }
         }
-        _lastChoice = button;
     }
 
     public void PaintColor(int color)
