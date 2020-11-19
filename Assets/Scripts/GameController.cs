@@ -21,9 +21,15 @@ public class GameController : MonoBehaviour, ITurnBasedGameController
             players[i] = p.GetComponent<Player>();
             players[i].id = i;
             players[i].playerName = PlayerSettings.names[i];
-            players[i].ai = PlayerSettings.ais[i];
-            players[i].aiLevel = PlayerSettings.aiLevel[i];
             players[i].startingHex = hexmap.startingHexagons[i];
+        }
+        var ais = PlayerSettings.activeAis;
+        var playerCnt = players.Length;
+        while (ais > 0)
+        {
+            players[playerCnt - 1].ai = true;
+            ais--;
+            playerCnt--;
         }
     }
     void Start()

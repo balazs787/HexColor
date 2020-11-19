@@ -7,7 +7,6 @@ public class Player : MonoBehaviour
     public string playerName;
     public int id;
     public bool ai;
-    public int aiLevel;
     public HexagonField startingHex;
     private int _numberOfHexes;
 
