@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Assets.Load;
+using System.Linq;
+using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
@@ -34,6 +36,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         GameStart();
+        Load();
     }
 
     void Update()
@@ -120,5 +123,27 @@ public class GameController : MonoBehaviour
             }
         }
         GameEnd();
+    }
+
+    public void Load()
+    {
+        var hexagonModels = LoadProperties.HexagonModels;
+
+        var indexer = 0;
+        foreach(var hexagon in hexmap.hexagons)
+        {
+            var model = hexagonModels.ElementAt(indexer);
+            hexagon._player = model.Player;
+
+            for (int i = 0; i < interfacePanel.ColorButtons.materials.Length; i++)
+            {
+                if (model.Color == interfacePanel.ColorButtons.materials[i].color)
+                {
+                    hexagon.GetComponent<MeshRenderer>().material = interfacePanel.ColorButtons.materials[i];
+                }
+            }
+
+            indexer++;
+        }
     }
 }

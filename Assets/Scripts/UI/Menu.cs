@@ -1,4 +1,10 @@
-﻿using TMPro;
+﻿using Assets.Load;
+using Assets.Save;
+using Assets.Scripts.UI;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,12 +16,19 @@ public class Menu : MonoBehaviour
     public GameObject ConfrimSettingsButton;
     public GameObject SettingsPanel;
     public GameObject OptionsPanel;
+    public GameObject LoadElement;
+    public List<SaveModel> SaveModels;
 
     private int currentEdit;
 
     public void SetCurrentEdit(int edit)
     {
         currentEdit = edit;
+    }
+
+    public void Start()
+    {
+        SaveModels = new List<SaveModel>();
     }
 
     public void SetNumberOfPlayers(TMP_InputField input)
@@ -26,7 +39,7 @@ public class Menu : MonoBehaviour
         {
             number = 2;
         }
-        else if(number > 4)
+        else if (number > 4)
         {
             number = 4;
         }
@@ -63,5 +76,41 @@ public class Menu : MonoBehaviour
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void PopulateList()
+    {
+        var currentDirectory = Directory.GetCurrentDirectory();
+
+        var filePaths = Directory.GetFiles(currentDirectory, "*.save", SearchOption.TopDirectoryOnly);
+
+        SaveModels.Clear();
+
+        foreach (var path in filePaths)
+        {
+            using (var sr = new StreamReader(path))
+            {
+                var json = sr.ReadToEnd();
+
+                var loadModel = JsonUtility.FromJson<SaveModel>(json);
+
+                SaveModels.Add(loadModel);
+            }
+        }
+
+        var index = 0;
+
+        foreach (var model in SaveModels)
+        {
+            var loadPrefab = Instantiate(LoadElement);
+            loadPrefab.GetComponent<LoadElement>().Setup(model.SceneName, model.SaveTime, index++);
+        }
+    }
+
+    public void OnElementlicked(int index)
+    {
+        var saveModel = SaveModels.ElementAt(index);
+
+        LoadProperties.HexagonModels = saveModel.SaveModels;
     }
 }

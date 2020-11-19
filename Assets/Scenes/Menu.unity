@@ -210,6 +210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Padding: {x: 0, y: 0, z: 0, w: 0}
+  m_Softness: {x: 0, y: 0}
 --- !u!1 &13596946
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,6 +798,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Padding: {x: 0, y: 0, z: 0, w: 0}
+  m_Softness: {x: 0, y: 0}
 --- !u!1 &81116365
 GameObject:
   m_ObjectHideFlags: 0
@@ -1343,6 +1347,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Padding: {x: 0, y: 0, z: 0, w: 0}
+  m_Softness: {x: 0, y: 0}
 --- !u!1 &132840962
 GameObject:
   m_ObjectHideFlags: 0
@@ -3590,6 +3596,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Padding: {x: 0, y: 0, z: 0, w: 0}
+  m_Softness: {x: 0, y: 0}
 --- !u!1 &595842412
 GameObject:
   m_ObjectHideFlags: 0
@@ -8590,6 +8598,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Padding: {x: 0, y: 0, z: 0, w: 0}
+  m_Softness: {x: 0, y: 0}
 --- !u!1 &1101277127
 GameObject:
   m_ObjectHideFlags: 0
@@ -10022,6 +10032,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Padding: {x: 0, y: 0, z: 0, w: 0}
+  m_Softness: {x: 0, y: 0}
 --- !u!1 &1303942108
 GameObject:
   m_ObjectHideFlags: 0
@@ -10658,6 +10670,8 @@ MonoBehaviour:
   ConfrimSettingsButton: {fileID: 0}
   SettingsPanel: {fileID: 0}
   OptionsPanel: {fileID: 0}
+  LoadElement: {fileID: 1955696494261612742, guid: eb3fde4a13114844eae383eb93ceb8c1,
+    type: 3}
 --- !u!222 &1415452463
 CanvasRenderer:
   m_ObjectHideFlags: 0

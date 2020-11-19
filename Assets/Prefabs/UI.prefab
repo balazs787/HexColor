@@ -1894,6 +1894,7 @@ MonoBehaviour:
   MenuButton: {fileID: 6570295761728227784}
   QuitButton: {fileID: 6570295762672994419}
   notificationText: {fileID: 6570295761507842907}
+  ColorButtons: {fileID: 6570295761456658207}
 --- !u!1 &6570295761897675328
 GameObject:
   m_ObjectHideFlags: 0
@@ -2868,7 +2869,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6570295762670383085}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6570295761844934004}
+        m_MethodName: Save
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6570295762672994419
 GameObject:
   m_ObjectHideFlags: 0
