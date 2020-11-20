@@ -9,6 +9,7 @@ namespace Assets.Load
 {
     public static class LoadProperties
     {
+        public static bool GameLoading;
         public static List<HexagonModel> HexagonModels;
     }
 }

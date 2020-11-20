@@ -32,11 +32,18 @@ public class GameController : MonoBehaviour
             ais--;
             playerCnt--;
         }
+        hexmap.Init();
     }
     void Start()
     {
-        GameStart();
-        Load();
+        if (LoadProperties.GameLoading)
+        {
+            Load();
+        }
+        else
+        {
+            GameStart();
+        } 
     }
 
     void Update()
@@ -145,5 +152,6 @@ public class GameController : MonoBehaviour
 
             indexer++;
         }
+        LoadProperties.GameLoading = false;
     }
 }

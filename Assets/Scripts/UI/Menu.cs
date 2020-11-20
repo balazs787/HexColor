@@ -11,12 +11,8 @@ using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
-    public GameObject PlayButton;
-    public GameObject SettingsButton;
-    public GameObject ConfrimSettingsButton;
-    public GameObject SettingsPanel;
-    public GameObject OptionsPanel;
     public GameObject LoadElement;
+    public GameObject LoadContent;
     public List<SaveModel> SaveModels;
 
     private int currentEdit;
@@ -102,15 +98,16 @@ public class Menu : MonoBehaviour
 
         foreach (var model in SaveModels)
         {
-            var loadPrefab = Instantiate(LoadElement);
+            var loadPrefab = Instantiate(LoadElement, LoadContent.transform);
             loadPrefab.GetComponent<LoadElement>().Setup(model.SceneName, model.SaveTime, index++);
         }
     }
 
-    public void OnElementlicked(int index)
+    public void ClearList()
     {
-        var saveModel = SaveModels.ElementAt(index);
-
-        LoadProperties.HexagonModels = saveModel.SaveModels;
+        foreach (Transform child in LoadContent.transform)
+        {
+            Destroy(child.gameObject);
+        }
     }
 }

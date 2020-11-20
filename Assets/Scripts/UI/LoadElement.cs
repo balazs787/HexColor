@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Assets.Load;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts.UI
 {
@@ -19,6 +21,17 @@ namespace Assets.Scripts.UI
             SceneName.text = sceneName;
             Date.text = date.ToString();
             index = i;
+        }
+
+        public void OnElementClicked()
+        {
+            LoadProperties.GameLoading = true;
+
+            var saveModel = FindObjectOfType<Menu>().SaveModels.ElementAt(index);
+
+            LoadProperties.HexagonModels = saveModel.SaveModels;
+
+            SceneManager.LoadScene(saveModel.SceneName);
         }
     }
 }

@@ -6,9 +6,8 @@ public class Hexmap : MonoBehaviour
     public List<HexagonField> hexagons;
     public List<HexagonField> startingHexagons;
 
-    private void Start()
+    public void Init()
     {
-
         foreach (var hexagon in FindObjectsOfType<HexagonField>())
         {
             hexagons.Add(hexagon);
@@ -16,7 +15,7 @@ public class Hexmap : MonoBehaviour
 
         foreach (var hexagon in hexagons)
         {
-            hexagon.GetComponent<MeshRenderer>().material=(FindObjectOfType<ColorButtons>().materials[Random.Range(0, 10)]);
+            hexagon.GetComponent<MeshRenderer>().material = (FindObjectOfType<ColorButtons>().materials[Random.Range(0, 10)]);
         }
 
 
