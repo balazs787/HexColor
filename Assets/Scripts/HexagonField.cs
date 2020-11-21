@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class HexagonField: MonoBehaviour
 {
@@ -65,7 +66,7 @@ public class HexagonField: MonoBehaviour
     {
         foreach (var hex in _hexes)
         {
-            if (hex != null && hex.GetPlayer() == null && hex.GetColor() == material.color)
+            if (hex != null && hex.GetPlayer() == null && hex.GetMaterial().color == material.color)
             {
                 hex.SetPlayer(FindObjectOfType<GameController>().GetPlayer());
                 FindObjectOfType<GameController>().GetPlayer().AddHex();
@@ -74,9 +75,9 @@ public class HexagonField: MonoBehaviour
         }
     }
 
-    public Color GetColor()
+    public Material GetMaterial()
     {
-        return gameObject.GetComponent<MeshRenderer>().material.color;
+        return gameObject.GetComponent<MeshRenderer>().material;
     }
 
     public void SetPlayer(Player player)
@@ -97,5 +98,10 @@ public class HexagonField: MonoBehaviour
     public void ResetChecked()
     {
         _checked = false;
+    }
+
+    public HexagonField[] GetNeighbours()
+    {
+        return _hexes;
     }
 }

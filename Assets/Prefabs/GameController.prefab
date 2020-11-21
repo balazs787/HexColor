@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3089004684901956417}
   - component: {fileID: 3089004684901956416}
+  - component: {fileID: 6610596029519479186}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -47,5 +48,19 @@ MonoBehaviour:
   player: {fileID: 5249811085240197919, guid: 3ca99fd05ebf4f1429dfbf660df56261, type: 3}
   hexmap: {fileID: 0}
   interfacePanel: {fileID: 0}
+  hexColorAi: {fileID: 6610596029519479186}
   endTurn: 0
   turn: 0
+--- !u!114 &6610596029519479186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3089004684901956419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030ae85bc18fe724c80b244a72de5eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameController: {fileID: 3089004684901956416}

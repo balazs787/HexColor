@@ -69,7 +69,7 @@ public class InterfacePanel : MonoBehaviour
         {
             saveObject.SaveModels.Add(new HexagonModel
             {
-                Color = hexagon.GetColor(),
+                Color = hexagon.GetMaterial().color,
                 Player = hexagon.GetPlayer()
             });
         }

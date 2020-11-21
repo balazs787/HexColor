@@ -1,4 +1,5 @@
 ﻿using Assets.Load;
+using Assets.Scripts;
 using System.Linq;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ public class GameController : MonoBehaviour
     public Hexmap hexmap;
     private int _activePlayerId;
     public InterfacePanel interfacePanel;
+    public HexColorAi hexColorAi;
     public bool endTurn;
     public int turn = 0;
 
@@ -23,6 +25,7 @@ public class GameController : MonoBehaviour
             players[i].id = i;
             players[i].playerName = PlayerSettings.names[i];
             players[i].startingHex = hexmap.startingHexagons[i];
+            hexmap.startingHexagons[i].SetPlayer(players[i]);
         }
         var ais = PlayerSettings.activeAis;
         var playerCnt = players.Length;
@@ -92,7 +95,7 @@ public class GameController : MonoBehaviour
         endTurn = false;
         if (GetPlayer().ai)
         {
-            //AiTurn(GetPlayer());
+            hexColorAi.AiTurn(GetPlayer());
         }
         else
         {

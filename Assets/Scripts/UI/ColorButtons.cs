@@ -7,7 +7,7 @@ public class ColorButtons : MonoBehaviour
     public Material[] materials;
     public Button[] Buttons;
 
-    public void Deactive(Button button)
+    public void Deactive()
     {
         foreach (var b in Buttons)
         {
@@ -29,5 +29,13 @@ public class ColorButtons : MonoBehaviour
     {
         FindObjectOfType<GameController>().GetPlayer().ChooseColor(materials[color]);
         FindObjectOfType<GameController>().NextPlayer();
+        Deactive();
+    }
+
+    public void PaintColor(Material material)
+    {
+        FindObjectOfType<GameController>().GetPlayer().ChooseColor(material);
+        FindObjectOfType<GameController>().NextPlayer();
+        Deactive();
     }
 }
