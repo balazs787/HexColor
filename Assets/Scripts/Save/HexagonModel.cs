@@ -10,7 +10,7 @@ namespace Assets.Save
     [Serializable]
     public class HexagonModel
     {
-        [SerializeField] public Player Player;
+        [SerializeField] public int PlayerId;
         [SerializeField] public Color Color;
     }
 }

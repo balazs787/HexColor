@@ -17,6 +17,13 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
+        if (LoadProperties.GameLoading)
+        {
+            PlayerSettings.activePlayers = LoadProperties.ActivePlayers;
+            PlayerSettings.activeAis = LoadProperties.ActiveAis;
+            PlayerSettings.names = LoadProperties.Names.ToArray();
+            PlayerSettings.aiLevel = LoadProperties.AiLevel;
+        }
         players = new Player[PlayerSettings.activePlayers];
         for (int i = 0; i < PlayerSettings.activePlayers; i++)
         {
@@ -143,21 +150,19 @@ public class GameController : MonoBehaviour
 
     public void Load()
     {
-        var hexagonModels = LoadProperties.HexagonModels;
-
-
         turn = LoadProperties.Turn;
         _activePlayerId = LoadProperties.ActivePlayer;
-        PlayerSettings.activePlayers = LoadProperties.ActivePlayers;
-        PlayerSettings.activeAis = LoadProperties.ActiveAis;
-        PlayerSettings.names = LoadProperties.Names.ToArray();
-        PlayerSettings.aiLevel = LoadProperties.AiLevel;
+
+        var hexagonModels = LoadProperties.HexagonModels;
 
         var indexer = 0;
         foreach(var hexagon in hexmap.hexagons)
         {
             var model = hexagonModels.ElementAt(indexer);
-            hexagon._player = model.Player;
+            if (model.PlayerId != -1)
+            {
+                hexagon.SetPlayer(players[model.PlayerId]);
+            }
 
             for (int i = 0; i < interfacePanel.ColorButtons.materials.Length; i++)
             {
@@ -169,6 +174,8 @@ public class GameController : MonoBehaviour
 
             indexer++;
         }
+        interfacePanel.NewTurn(GetPlayer());
+        interfacePanel.ColorButtons.Deactive();
 
         LoadProperties.GameLoading = false;
     }
