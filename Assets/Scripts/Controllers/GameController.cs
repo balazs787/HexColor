@@ -155,11 +155,6 @@ public class GameController : MonoBehaviour
         turn = LoadProperties.Turn;
         _activePlayerId = LoadProperties.ActivePlayer;
 
-        PlayerSettings.activePlayers = LoadProperties.ActivePlayers;
-        PlayerSettings.activeAis = LoadProperties.ActiveAis;
-        PlayerSettings.names = LoadProperties.Names.ToArray();
-        PlayerSettings.aiLevel = LoadProperties.AiLevel;
-
         var indexer = 0;
         foreach(var hexagon in hexmap.hexagons)
         {
