@@ -150,10 +150,10 @@ public class GameController : MonoBehaviour
 
     public void Load()
     {
+        var hexagonModels = LoadProperties.HexagonModels;
+
         turn = LoadProperties.Turn;
         _activePlayerId = LoadProperties.ActivePlayer;
-
-        var hexagonModels = LoadProperties.HexagonModels;
 
         var indexer = 0;
         foreach(var hexagon in hexmap.hexagons)

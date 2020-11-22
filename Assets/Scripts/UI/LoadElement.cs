@@ -16,10 +16,10 @@ namespace Assets.Scripts.UI
         public TextMeshProUGUI Date;
         public int index;
         
-        public void Setup(string sceneName, DateTime date, int i)
+        public void Setup(string sceneName, string date, int i)
         {
             SceneName.text = sceneName;
-            Date.text = date.ToString();
+            Date.text = date;
             index = i;
         }
 

@@ -12,7 +12,7 @@ namespace Assets.Save
     {
         [SerializeField] public List<HexagonModel> SaveModels;
         [SerializeField] public string SceneName;
-        [SerializeField] public DateTime SaveTime;
+        [SerializeField] public string SaveTime;
         [SerializeField] public int ActivePlayers;
         [SerializeField] public int ActiveAis;
         [SerializeField] public List<string> Names;
