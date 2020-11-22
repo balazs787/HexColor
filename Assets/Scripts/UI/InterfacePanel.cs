@@ -62,7 +62,7 @@ public class InterfacePanel : MonoBehaviour
         {
             SaveModels = new List<HexagonModel>(),
             SceneName = SceneManager.GetActiveScene().name,
-            SaveTime = DateTime.Now, 
+            SaveTime = DateTime.Now.ToString("yyyyMMddHmmss"), 
             ActiveAis = PlayerSettings.activeAis,
             ActivePlayers = PlayerSettings.activePlayers,
             AiLevel = PlayerSettings.aiLevel,
