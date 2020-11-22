@@ -36,7 +36,7 @@ public class InterfacePanel : MonoBehaviour
 
     public void Save()
     {
-        var dateTime = DateTime.Now.ToString("yyyyMMddHmmss");
+        var dateTime = DateTime.Now.ToString("yyyyMMddHHmmss");
 
         var sceneName = SceneManager.GetActiveScene().name;
 
@@ -62,7 +62,7 @@ public class InterfacePanel : MonoBehaviour
         {
             SaveModels = new List<HexagonModel>(),
             SceneName = SceneManager.GetActiveScene().name,
-            SaveTime = DateTime.Now.ToString("yyyyMMddHmmss"), 
+            SaveTime = DateTime.Now.ToString("yyyy.MM.dd HH:mm:ss"), 
             ActiveAis = PlayerSettings.activeAis,
             ActivePlayers = PlayerSettings.activePlayers,
             AiLevel = PlayerSettings.aiLevel,
