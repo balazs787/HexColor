@@ -73,10 +73,19 @@ public class InterfacePanel : MonoBehaviour
 
         foreach (var hexagon in hexmap.hexagons)
         {
+            int pId;
+            if (hexagon.GetPlayer() == null)
+            {
+                pId = -1;
+            }
+            else
+            {
+                pId = hexagon.GetPlayer().GetId();
+            }
             saveObject.SaveModels.Add(new HexagonModel
             {
                 Color = hexagon.GetMaterial().color,
-                Player = hexagon.GetPlayer()
+                PlayerId = pId
             });
         }
 
