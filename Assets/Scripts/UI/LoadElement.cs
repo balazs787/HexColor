@@ -30,6 +30,11 @@ namespace Assets.Scripts.UI
             var saveModel = FindObjectOfType<Menu>().SaveModels.ElementAt(index);
 
             LoadProperties.HexagonModels = saveModel.SaveModels;
+            LoadProperties.ActiveAis = saveModel.ActiveAis;
+            LoadProperties.ActivePlayer = saveModel.ActivePlayer;
+            LoadProperties.ActivePlayers = saveModel.ActivePlayers;
+            LoadProperties.AiLevel = saveModel.AiLevel;
+            LoadProperties.Names = saveModel.Names;
 
             SceneManager.LoadScene(saveModel.SceneName);
         }

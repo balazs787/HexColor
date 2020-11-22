@@ -13,5 +13,11 @@ namespace Assets.Save
         [SerializeField] public List<HexagonModel> SaveModels;
         [SerializeField] public string SceneName;
         [SerializeField] public DateTime SaveTime;
+        [SerializeField] public int ActivePlayers;
+        [SerializeField] public int ActiveAis;
+        [SerializeField] public List<string> Names;
+        [SerializeField] public int AiLevel;
+        [SerializeField] public int ActivePlayer;
+        [SerializeField] public int Turn;
     }
 }

@@ -71,6 +71,12 @@ public class GameController : MonoBehaviour
     {
         return players[_activePlayerId];
     }
+
+    public int GetTurn()
+    {
+        return turn;
+    }
+
     public void NextPlayer()
     {
         CheckVictory();
@@ -139,6 +145,14 @@ public class GameController : MonoBehaviour
     {
         var hexagonModels = LoadProperties.HexagonModels;
 
+
+        turn = LoadProperties.Turn;
+        _activePlayerId = LoadProperties.ActivePlayer;
+        PlayerSettings.activePlayers = LoadProperties.ActivePlayers;
+        PlayerSettings.activeAis = LoadProperties.ActiveAis;
+        PlayerSettings.names = LoadProperties.Names.ToArray();
+        PlayerSettings.aiLevel = LoadProperties.AiLevel;
+
         var indexer = 0;
         foreach(var hexagon in hexmap.hexagons)
         {
@@ -155,6 +169,7 @@ public class GameController : MonoBehaviour
 
             indexer++;
         }
+
         LoadProperties.GameLoading = false;
     }
 }
