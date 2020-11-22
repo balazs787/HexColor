@@ -23,7 +23,11 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        color = Color.black;
+        if(color == Color.clear)
+        {
+            color = Color.black;
+        }
+
     }
 
     public void AddHex()

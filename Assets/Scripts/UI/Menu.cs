@@ -110,4 +110,9 @@ public class Menu : MonoBehaviour
             Destroy(child.gameObject);
         }
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

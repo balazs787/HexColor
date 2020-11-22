@@ -162,6 +162,10 @@ public class GameController : MonoBehaviour
             if (model.PlayerId != -1)
             {
                 hexagon.SetPlayer(players[model.PlayerId]);
+                if (players[model.PlayerId].color == Color.clear)
+                {
+                    players[model.PlayerId].color = model.Color;
+                }
             }
 
             for (int i = 0; i < interfacePanel.ColorButtons.materials.Length; i++)
