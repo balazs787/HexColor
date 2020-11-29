@@ -4953,6 +4953,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1415452462}
+        m_MethodName: LoadSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!222 &745475602
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9159,6 +9170,13 @@ MonoBehaviour:
     type: 3}
   LoadContent: {fileID: 1435921074}
   SaveModels: []
+  NoPlayers: {fileID: 745196740}
+  NoAis: {fileID: 1688881664}
+  AiLevel: {fileID: 183189716}
+  PlayerOneName: {fileID: 1976364591}
+  PlayerTwoName: {fileID: 992442169}
+  PlayerThreeName: {fileID: 1867951421}
+  PlayerFourName: {fileID: 2085121833}
 --- !u!222 &1415452463
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10407,7 +10425,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "2\u200B"
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11183,7 +11201,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: 1
+  m_Text: 0
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0

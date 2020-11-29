@@ -57,7 +57,7 @@ namespace Assets.Scripts
                 }
             }
 
-            AiColorPick(player, bestChoice, possibleChoices);
+            AiColorPick(bestChoice, possibleChoices);
             ClearAccessibleFields();
         }
 
@@ -69,7 +69,7 @@ namespace Assets.Scripts
             }
         }
 
-        public void AiColorPick(Player player, Material bestChoice, List<Material> possibleChoices)
+        public void AiColorPick(Material bestChoice, List<Material> possibleChoices)
         {
             if (PlayerSettings.aiLevel == 2)
             {

@@ -15,6 +15,15 @@ public class Menu : MonoBehaviour
     public GameObject LoadContent;
     public List<SaveModel> SaveModels;
 
+    public TMP_InputField NoPlayers;
+    public TMP_InputField NoAis;
+    public TextMeshProUGUI AiLevel;
+
+    public TextMeshProUGUI PlayerOneName;
+    public TextMeshProUGUI PlayerTwoName;
+    public TextMeshProUGUI PlayerThreeName;
+    public TextMeshProUGUI PlayerFourName;
+
     private int currentEdit;
 
     public void SetCurrentEdit(int edit)
@@ -101,6 +110,26 @@ public class Menu : MonoBehaviour
             var loadPrefab = Instantiate(LoadElement, LoadContent.transform);
             loadPrefab.GetComponent<LoadElement>().Setup(model.SceneName, model.SaveTime, index++);
         }
+    }
+
+    public void LoadSettings()
+    {
+        NoPlayers.text = PlayerSettings.activePlayers.ToString();
+        NoAis.text = PlayerSettings.activeAis.ToString();
+
+        var ailevel = PlayerSettings.aiLevel;
+        if (ailevel==1)
+        {
+            AiLevel.text = "Medium";
+        }else if(ailevel == 2)
+        {
+            AiLevel.text = "Hard";
+        }
+
+        PlayerOneName.text = PlayerSettings.names[0];
+        PlayerTwoName.text = PlayerSettings.names[1];
+        PlayerThreeName.text = PlayerSettings.names[2];
+        PlayerFourName.text = PlayerSettings.names[3];
     }
 
     public void ClearList()

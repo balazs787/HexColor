@@ -104,7 +104,6 @@ public class GameController : MonoBehaviour
     public void Turn(Player player)
     {
         turn++;
-        Debug.Log("turn: " + turn);
         endTurn = false;
         if (GetPlayer().ai)
         {
@@ -162,6 +161,7 @@ public class GameController : MonoBehaviour
             if (model.PlayerId != -1)
             {
                 hexagon.SetPlayer(players[model.PlayerId]);
+                players[model.PlayerId].AddHex();
                 if (players[model.PlayerId].color == Color.clear)
                 {
                     players[model.PlayerId].color = model.Color;
